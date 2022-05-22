@@ -2,6 +2,7 @@ package main
 
 import (
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	"huy_grpc/greet/proto"
 	"log"
 	"net"
@@ -25,7 +26,7 @@ func main() {
 	s := grpc.NewServer()
 
 	proto.RegisterGreetServiceServer(s,&Server{})
-
+	reflection.Register(s)
 	if err = s.Serve(lis); err != nil {
 		log.Fatalf("Fail with %v" , err)
 	}
