@@ -19,6 +19,7 @@ func main() {
 	//DoGreet(c)
 	//doGreetManyTimes(c)
 	//doLongGreet(c)
-	doGreetEveryOne(c)
+	//doGreetEveryOne(c)
+	doError(c)
 	defer conn.Close()
 }
